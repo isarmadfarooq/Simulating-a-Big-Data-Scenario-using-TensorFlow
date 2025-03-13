@@ -70,6 +70,10 @@
 
 This project generates a synthetic dataset with 1,000,000 rows and multiple features, preprocesses it, and trains a neural network using TensorFlow. The dataset is stored in **Parquet** format, and the model is saved in the **Keras format (`.keras`)**.
 
+## How to clone project
+'''
+git clone git@github.com:isarmadfarooq/Simulating-a-Big-Data-Scenario-using-TensorFlow.git
+'''
 ## 📌 Project Structure
 ```
 D:\Online Assigenment\MSC_DataAnalytic\Simulating-a-Big-Data-Scenario-using-TensorFlow
