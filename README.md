@@ -1,64 +1,64 @@
-Enabling Long Path Support in Windows
+# Enabling Long Path Support in Windows
 
-Overview
+# Overview
 
-If you are encountering file path length issues while installing TensorFlow or working with long file names, you need to enable long path support in Windows. This guide provides step-by-step instructions to do so using the Windows Registry Editor and PowerShell.
-
-Enable Long Paths via Registry Editor
-
-1. Open Registry Editor
-
-Press Win + R, type regedit, and press Enter.
-
-Click "Yes" if prompted by User Account Control (UAC).
-
-2. Navigate to the Correct Path
-
-Go to:
-
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
-
-3. Modify or Create the LongPathsEnabled Key
-
-Look for a DWORD (32-bit) value named LongPathsEnabled.
-
-If it does not exist:
-
-Right-click FileSystem, select New > DWORD (32-bit) Value.
-
-Name it LongPathsEnabled.
-
-Double-click LongPathsEnabled, set the Value data to 1, and click OK.
-
-4. Restart Your Computer
-
-The changes will only take effect after a system restart.
-
-Enable Long Paths via PowerShell
-
-Alternatively, you can enable long path support using PowerShell.
-
-1. Run PowerShell as Administrator
-
-Press Win + S, type PowerShell.
-
-Right-click PowerShell and select "Run as administrator".
-
-Click "Yes" if prompted by UAC.
-
-2. Execute the Following Command
-
-New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
-
-3. Restart Your Computer
-
-Restart your PC for changes to take effect.
-
-Troubleshooting
-
-If you receive a "Requested registry access is not allowed" error, ensure you are running PowerShell as an administrator.
-
-If the FileSystem key is missing in Registry Editor, manually create it under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control.
+  If you are encountering file path length issues while installing TensorFlow or working with long file names, you need to enable long path support in Windows. This guide provides step-by-step instructions to do so using the Windows Registry Editor and PowerShell.
+  
+  Enable Long Paths via Registry Editor
+  
+  1. Open Registry Editor
+  
+  Press Win + R, type regedit, and press Enter.
+  
+  Click "Yes" if prompted by User Account Control (UAC).
+  
+  2. Navigate to the Correct Path
+  
+  Go to:
+  
+  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem
+  
+  3. Modify or Create the LongPathsEnabled Key
+  
+  Look for a DWORD (32-bit) value named LongPathsEnabled.
+  
+  If it does not exist:
+  
+  Right-click FileSystem, select New > DWORD (32-bit) Value.
+  
+  Name it LongPathsEnabled.
+  
+  Double-click LongPathsEnabled, set the Value data to 1, and click OK.
+  
+  4. Restart Your Computer
+  
+  The changes will only take effect after a system restart.
+  
+  Enable Long Paths via PowerShell
+  
+  Alternatively, you can enable long path support using PowerShell.
+  
+  1. Run PowerShell as Administrator
+  
+  Press Win + S, type PowerShell.
+  
+  Right-click PowerShell and select "Run as administrator".
+  
+  Click "Yes" if prompted by UAC.
+  
+  2. Execute the Following Command
+  
+  New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+  
+  3. Restart Your Computer
+  
+  Restart your PC for changes to take effect.
+  
+  Troubleshooting
+  
+  If you receive a "Requested registry access is not allowed" error, ensure you are running PowerShell as an administrator.
+  
+  If the FileSystem key is missing in Registry Editor, manually create it under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control.
 
 
 
